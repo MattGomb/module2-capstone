@@ -11,3 +11,20 @@ h1 {
   font-weight: bold;
   color: turquoise;
 }
+
+#navbar {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#navbar img {
+  max-height: 2rem;
+}
+
+#navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
