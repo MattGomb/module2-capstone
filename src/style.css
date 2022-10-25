@@ -1,9 +1,13 @@
-body {
-  background-color: azure;
+/* import fonts */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.hello {
-  color: purple;
+h1 {
   font-size: 2rem;
   font-weight: bold;
+  color: turquoise;
 }
