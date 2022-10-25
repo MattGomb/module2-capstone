@@ -37,3 +37,23 @@ h1 {
   border-top: 1px solid black;
   width: 100%;
 }
+
+
+
+/* POKEMON CARDS */
+#main-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.PokeCard{
+  background-color: burlywood;
+  margin: 5px;
+  width: 20%;
+}
+
+.picDiv{
+  background-color: yellow;
+}
