@@ -17,6 +17,7 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-bottom: 1px solid black;
 }
 
 #navbar img {
@@ -27,4 +28,12 @@ h1 {
   list-style: none;
   display: flex;
   gap: 1rem;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  padding: 1rem;
+  border-top: 1px solid black;
+  width: 100%;
 }
