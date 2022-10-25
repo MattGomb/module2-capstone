@@ -11,3 +11,29 @@ h1 {
   font-weight: bold;
   color: turquoise;
 }
+
+#navbar {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+#navbar img {
+  max-height: 2rem;
+}
+
+#navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  padding: 1rem;
+  border-top: 1px solid black;
+  width: 100%;
+}
