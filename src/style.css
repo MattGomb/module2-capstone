@@ -6,22 +6,28 @@
   box-sizing: border-box;
 }
 
-h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: turquoise;
+#page-container {
+  position: relative;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2.5rem;
 }
 
 #navbar {
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   border-bottom: 1px solid black;
+  align-items: center;
 }
 
 #navbar img {
-  max-height: 2rem;
+  max-height: 3rem;
 }
 
 #navbar-links {
@@ -30,30 +36,77 @@ h1 {
   gap: 1rem;
 }
 
+#title {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
 #footer {
   position: fixed;
   bottom: 0;
-  padding: 1rem;
   border-top: 1px solid black;
   width: 100%;
+  padding: 0.5rem 2rem;
+  height: 2.5rem;
+  background-color: white;
 }
-
-
 
 /* POKEMON CARDS */
 #main-container{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
+  height: 95%;
   
 }
 
 .PokeCard{
   background-color: burlywood;
-  margin: 5px;
+  margin: 6px;
   width: 20%;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
+
+.name {
+  padding: 0.5rem;
+}
+
+.picDiv, .intro {
+  border: 1px solid black;
 }
 
 .picDiv{
+  display: flex;
+  justify-content: center;
   background-color: yellow;
+  border-radius: 0.5rem;
+  margin: 0 0.5rem;
+}
+
+.intro {
+  min-height: 6rem;
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: rgb(255,255,255,0.4);
+  border-radius: 0.5rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+}
+
+button {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: translateY(-1px);
+  box-shadow: 1px 1px rgb(71,71,71);
 }
