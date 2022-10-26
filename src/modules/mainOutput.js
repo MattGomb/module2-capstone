@@ -31,23 +31,27 @@ const retrieve = (item) => {
   intro.appendChild(height);
 
   const weight = document.createElement('p');
-  weight.innerHTML = `weight: ${item.weight} lbs`;
+  weight.innerHTML = `Weight: ${item.weight} lbs`;
   intro.appendChild(weight);
 
   const buttonsDiv = document.createElement('div');
   buttonsDiv.classList.add('buttons');
   card.appendChild(buttonsDiv);
+
   const commentBtn = document.createElement('button');
   commentBtn.classList.add('comment');
+  commentBtn.setAttribute('type', 'button');
   commentBtn.innerText = 'Comments';
+
   const reserveBtn = document.createElement('button');
   reserveBtn.innerText = 'Reserve';
   reserveBtn.classList.add('reserve');
+  reserveBtn.setAttribute('type', 'button');
   buttonsDiv.appendChild(commentBtn);
   buttonsDiv.appendChild(reserveBtn);
 };
 
-for (let i = 1; i < 152; i + 1) {
+for (let i = 1; i < 152; i += 1) {
   const link = 'https://pokeapi.co/api/v2/pokemon/';
   const finalLink = link + i;
   const myFunction = async () => {
@@ -59,12 +63,4 @@ for (let i = 1; i < 152; i + 1) {
   myFunction();
 }
 
-/*
-    const myFunction = async () => {
-        await fetch('https://pokeapi.co/api/v2/pokemon/1/')
-       .then((response) => response.json())
-       .then((json) => console.log(json))
-       .catch((err) => console.log(err));
-       }
-       myFunction()
-       */
+
