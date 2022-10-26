@@ -118,6 +118,54 @@ button:hover {
   box-shadow: 1px 1px rgb(71, 71, 71);
 }
 
+button:active {
+  cursor: pointer;
+  transform: translateY(1px);
+  box-shadow: 1px 1px rgb(71, 71, 71);
+}
+
+.popupCard {
+  position: fixed;
+  display: flex;
+  top: 20%;
+  left: 20%;
+  z-index: 999;
+  min-height: 70%;
+  min-width: 60%;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 1rem;
+}
+
+.popupPoke {
+  margin: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
+
+.comment-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-section h3, .new-comments {
+  padding: 0.5rem;
+}
+
+.comment-area {
+  min-height: 60%;
+  border: 1px solid black;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.new-comments input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
 @media screen and (min-width: 321px) {
   .PokeCard {
     width: 60%;
