@@ -5,10 +5,19 @@ const retrieve = (item) => {
   card.setAttribute('class', 'PokeCard');
   codex.appendChild(card);
 
+  const header = document.createElement('div');
+  header.classList.add('header');
+  card.appendChild(header);
+
   const pokeName = document.createElement('h3'); // Card Tittle
   pokeName.classList.add('name');
   pokeName.innerText = item.name;
-  card.appendChild(pokeName);
+  header.appendChild(pokeName);
+
+  const pokeID = document.createElement('p')
+  pokeID.classList.add('id')
+  pokeID.innerText = `${item.id}`;
+  header.appendChild(pokeID);
 
   const picDiv = document.createElement('div');
   picDiv.setAttribute('class', 'picDiv');
@@ -23,7 +32,7 @@ const retrieve = (item) => {
   card.appendChild(intro);
 
   const type = document.createElement('p');
-  type.innerHTML = `Type: ${item.types[0].type.name}`;
+  type.innerHTML = item.types.length === 2 ? `Type: ${item.types[0].type.name}, ${item.types[1].type.name}` : `Type: ${item.types[0].type.name}`;
   intro.appendChild(type);
 
   const height = document.createElement('p');
@@ -62,5 +71,3 @@ for (let i = 1; i < 152; i += 1) {
   };
   myFunction();
 }
-
-
