@@ -76,8 +76,17 @@ main {
   border-radius: 0.5rem;
 }
 
-.name {
+.header {
+  display: flex;
+  justify-content: space-between;
   padding: 0.5rem;
+  align-items: baseline;
+}
+
+.id {
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding-right: 0.5rem;
 }
 
 .picDiv,
@@ -127,14 +136,19 @@ button:active {
 .popupCard {
   position: fixed;
   display: flex;
-  top: 20%;
-  left: 20%;
+  flex-direction: column;
+  top: 10%;
+  left: 2%;
   z-index: 999;
-  min-height: 70%;
-  min-width: 60%;
+  height: 80%;
+  width: 95%;
   background-color: white;
   border: 3px solid black;
   border-radius: 1rem;
+}
+
+.left-side, .comment-section {
+  width: 100%;
 }
 
 .popupPoke {
@@ -148,7 +162,13 @@ button:active {
   flex-direction: column;
 }
 
-.comment-section h3, .new-comments {
+#comment-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.new-comments {
   padding: 0.5rem;
 }
 
@@ -183,6 +203,19 @@ button:active {
 @media screen and (min-width: 769px) {
   .PokeCard {
     width: 25%;
+  }
+
+  .popupCard {
+    flex-direction: row;
+    top: 10%;
+    left: 15%;
+    z-index: 999;
+    height: 80%;
+    width: 70%;
+  }
+  
+  .left-side, .comment-section {
+    width: 100%;
   }
 }
 
