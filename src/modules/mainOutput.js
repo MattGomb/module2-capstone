@@ -1,4 +1,23 @@
+import liked from './likesCounter.js';
+
 const codex = document.querySelector('#main-container');
+
+const newLikes = (item) => {
+  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/q43Np4AB1ka0fqpIWSXs/likes/')
+    .then((response) => response.json())
+    .then((json) => {
+      const pokeLikes = json;
+
+      for (let i = 0; i < pokeLikes.length; i += 1) {
+        if (pokeLikes[i].item_id === item) {
+          const pokeConst = `likes${item}`;
+          const pokeNumber = document.getElementById(pokeConst);
+          pokeNumber.textContent = pokeLikes[i].likes;
+        }
+      }
+    })
+    .catch((err) => console.log(err));
+};
 
 const retrieve = (item) => {
   const card = document.createElement('div'); // Card Div
@@ -58,9 +77,22 @@ const retrieve = (item) => {
   reserveBtn.setAttribute('type', 'button');
   buttonsDiv.appendChild(commentBtn);
   buttonsDiv.appendChild(reserveBtn);
+
+  const likeButton = document.createElement('button');
+  likeButton.setAttribute('id', item.name);
+  likeButton.innerHTML = 'Like!';
+  card.appendChild(likeButton);
+
+  const likesNumber = document.createElement('p');
+  likesNumber.setAttribute('id', `likes${item.name}`);
+  likesNumber.innerHTML = 0;
+  card.appendChild(likesNumber);
+
+  liked(item.name);
+  newLikes(item.name);
 };
 
-for (let i = 1; i < 152; i += 1) {
+for (let i = 1; i < 152; i +== 1) {
   const link = 'https://pokeapi.co/api/v2/pokemon/';
   const finalLink = link + i;
   const myFunction = async () => {
@@ -70,3 +102,13 @@ for (let i = 1; i < 152; i += 1) {
   };
   myFunction();
 }
+
+/*
+    const myFunction = async () => {
+        await fetch('https://pokeapi.co/api/v2/pokemon/1/')
+       .then((response) => response.json())
+       .then((json) => console.log(json))
+       .catch((err) => console.log(err));
+       }
+       myFunction()
+       */
