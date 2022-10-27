@@ -1,3 +1,6 @@
+import postComment from './addCommentAPI.js';
+import getComment from './getCommentAPI.js';
+
 const createPopup = (object) => {
   const popupContainer = document.createElement('div');
   popupContainer.setAttribute('class', 'popupCard');
@@ -28,7 +31,7 @@ const createPopup = (object) => {
   pokemonImage.setAttribute('alt', 'pokemon image');
   imgContainer.appendChild(pokemonImage);
   popupPoke.appendChild(imgContainer);
-  
+
   const intro = document.createElement('div');
   intro.classList.add('intro');
   popupPoke.appendChild(intro);
@@ -37,20 +40,20 @@ const createPopup = (object) => {
   info.textContent = `Type: 
   Height: ${object.height}
   weight: ${object.weight}
-  `
+  `;
   intro.appendChild(info);
-  
+
   const commentSection = document.createElement('div');
-  commentSection.classList.add('comment-section')
+  commentSection.classList.add('comment-section');
   popupContainer.appendChild(commentSection);
-  
+
   const commentHeader = document.createElement('div');
   commentHeader.setAttribute('id', 'comment-header');
   commentSection.appendChild(commentHeader);
 
   const commentTitle = document.createElement('h3');
   commentTitle.textContent = 'COMMENTS';
-  commentHeader.appendChild(commentTitle); 
+  commentHeader.appendChild(commentTitle);
 
   const closeBtn = document.createElement('button');
   closeBtn.textContent = 'X';
@@ -65,7 +68,7 @@ const createPopup = (object) => {
   newComments.classList.add('new-comments');
   commentSection.appendChild(newComments);
 
-  const addComments = document.createElement('h3')
+  const addComments = document.createElement('h3');
   addComments.textContent = 'Add a comment';
   newComments.appendChild(addComments);
 
@@ -79,16 +82,35 @@ const createPopup = (object) => {
   input2.setAttribute('placeholder', 'your insigths');
   newComments.appendChild(input2);
 
-  const submitBtn = document.createElement('button')
+  const submitBtn = document.createElement('button');
   submitBtn.setAttribute('type', 'submit');
-  submitBtn.setAttribute('id', 'submit-button')
+  submitBtn.setAttribute('id', 'submit-button');
   submitBtn.textContent = 'Submit';
   newComments.appendChild(submitBtn);
 
-  document.querySelector('#submit-button').addEventListener('click', () => {
-    console.log('grfv')
+  closeBtn.addEventListener('click', (e) => {
+    e.target.parentElement.parentElement.parentElement.remove();
   });
 
+  const displayComments = async () => {
+    const recentComments = await getComment(object.id);
+    await recentComments.reverse();
+    const newComment = document.createElement('div');
+    recentComments.forEach((comment) => {
+      newComment.innerHTML = `<p class="input-date">${comment.creation_date}</p><p class="comment-name">${comment.username}</p><p class="comment-msg">${comment.comment}</p>`;
+      commentArea.appendChild(newComment);
+    });
+  };
+
+  displayComments();
+
+  submitBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    await postComment(object.id, input1.value, input2.value);
+    await displayComments();
+    input1.value = '';
+    input2.value = '';
+  });
 };
 
 const reservationPopup = (name) => {
@@ -106,7 +128,7 @@ window.onload = () => {
   const btn = document.querySelectorAll('.comment');
   btn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-      const name = e.target.parentElement.parentElement.children[0].children[0].innerHTML
+      const name = e.target.parentElement.parentElement.children[0].children[0].innerHTML;
       reservationPopup(name);
     });
   });

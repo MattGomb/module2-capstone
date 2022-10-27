@@ -147,7 +147,8 @@ button:active {
   border-radius: 1rem;
 }
 
-.left-side, .comment-section {
+.left-side,
+.comment-section {
   width: 100%;
 }
 
@@ -213,8 +214,9 @@ button:active {
     height: 80%;
     width: 70%;
   }
-  
-  .left-side, .comment-section {
+
+  .left-side,
+  .comment-section {
     width: 100%;
   }
 }

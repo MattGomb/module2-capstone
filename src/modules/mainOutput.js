@@ -14,8 +14,8 @@ const retrieve = (item) => {
   pokeName.innerText = item.name;
   header.appendChild(pokeName);
 
-  const pokeID = document.createElement('p')
-  pokeID.classList.add('id')
+  const pokeID = document.createElement('p');
+  pokeID.classList.add('id');
   pokeID.innerText = `${item.id}`;
   header.appendChild(pokeID);
 
@@ -66,8 +66,7 @@ for (let i = 1; i < 152; i += 1) {
   const myFunction = async () => {
     await fetch(finalLink)
       .then((response) => response.json())
-      .then((json) => retrieve(json))
-      .catch((err) => console.log(err));
+      .then((json) => retrieve(json));
   };
   myFunction();
 }
