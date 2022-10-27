@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const codex = document.querySelector('#main-container');
 
 const retrieve = (item) => {
@@ -68,3 +69,16 @@ for (let i = 1; i < 152; i += 1) {
        }
        myFunction()
        */
+
+window.onload = () => {
+  const btn = document.querySelectorAll('.reserve');
+
+  console.log(btn);
+
+  btn.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const name = e.target.parentElement.parentElement.firstChild.textContent;
+      console.log(name);
+    });
+  });
+};
