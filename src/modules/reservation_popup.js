@@ -117,8 +117,14 @@ const createPopup = (object) => {
     recentReservations.forEach((reservation) => {
       const tr = document.createElement('tr');
       tr.innerHTML = `<td>${reservation.username}</td><td>${reservation.date_start}</td><td>${reservation.date_end}</td>`;
+      tr.setAttribute('class','reserved')
       tbody.appendChild(tr);
     });
+    
+    const reserved1 = document.querySelectorAll('.reserved').length;
+    const reservationCounter = document.createElement('h5');
+    reservationCounter.innerHTML = "Reservations: " + reserved1;
+    table.appendChild(reservationCounter);
   };
 
   displayReservations();
