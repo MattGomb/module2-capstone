@@ -172,7 +172,7 @@ button:active {
   padding: 0.5rem;
 }
 
-.comment-area {
+#comment-area {
   border: 1px solid black;
   margin: 0.5rem;
   border-radius: 0.5rem;
@@ -419,7 +419,7 @@ td {
     margin-top: 24px;
   }
 
-  .comment-area {
+  #comment-area {
     min-height: 60%;
   }
 }
