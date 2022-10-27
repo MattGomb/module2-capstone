@@ -12,7 +12,6 @@ const postComment = async (id, name, commentInput) => {
       'Content-Type': 'application/json',
     },
   });
-
 };
 
 export default postComment;
