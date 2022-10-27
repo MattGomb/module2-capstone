@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 import getReservation from './get_reservation.js';
 import postReservation from './add_reservation.js';
+import reservationCounter from './reservation_counter.js';
 
 // This function is created to display the information of each pokemon in a popup
 
@@ -117,14 +118,14 @@ const createPopup = (object) => {
     recentReservations.forEach((reservation) => {
       const tr = document.createElement('tr');
       tr.innerHTML = `<td>${reservation.username}</td><td>${reservation.date_start}</td><td>${reservation.date_end}</td>`;
-      tr.setAttribute('class','reserved')
+      tr.setAttribute('class', 'reserved');
       tbody.appendChild(tr);
     });
-    
-    const reserved1 = document.querySelectorAll('.reserved').length;
-    const reservationCounter = document.createElement('h5');
-    reservationCounter.innerHTML = "Reservations: " + reserved1;
-    table.appendChild(reservationCounter);
+
+    // Here is the counter for the reservations
+
+    const reserved1 = document.querySelectorAll('.reserved');
+    reservationCounter(reserved1, table);
   };
 
   displayReservations();
@@ -138,6 +139,8 @@ const createPopup = (object) => {
 
   submitReservation.addEventListener('click', async (e) => {
     const tbody = document.querySelector('tbody');
+    const counter = document.querySelector('.reservation-title');
+    counter.remove();
     tbody.remove();
     e.preventDefault();
     await postReservation(object.id, username.value, dateStart.value, dateEnd.value);
