@@ -95,8 +95,8 @@ const createPopup = (object) => {
   const displayComments = async () => {
     const recentComments = await getComment(object.id);
     await recentComments.reverse();
-    const newComment = document.createElement('div');
     recentComments.forEach((comment) => {
+      const newComment = document.createElement('div');
       newComment.innerHTML = `<p class="input-date">${comment.creation_date}</p><p class="comment-name">${comment.username}</p><p class="comment-msg">${comment.comment}</p>`;
       commentArea.appendChild(newComment);
     });
@@ -106,6 +106,7 @@ const createPopup = (object) => {
 
   submitBtn.addEventListener('click', async (e) => {
     e.preventDefault();
+    commentArea.innerHTML = '';
     await postComment(object.id, input1.value, input2.value);
     await displayComments();
     input1.value = '';
