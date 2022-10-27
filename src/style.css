@@ -140,6 +140,7 @@ button:active {
   top: 10%;
   left: 2%;
   z-index: 999;
+  height: 80%;
   width: 95%;
   background-color: white;
   border: 3px solid black;
@@ -173,11 +174,18 @@ button:active {
 }
 
 .comment-area {
-  max-height: 200px;
+  min-height: 60%;
   border: 1px solid black;
   margin: 0.5rem;
   border-radius: 0.5rem;
   overflow-y: scroll;
+}
+
+input {
+  width: 90%;
+  height: 24px;
+  margin-top: 5px;
+  padding-left: 5px;
 }
 
 .new-comments input {
@@ -185,6 +193,155 @@ button:active {
   padding: 0.5rem;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
+}
+
+.reservation-popup {
+  position: fixed;
+  top: 10%;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+  background-color: rgb(158, 2, 2);
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon-name {
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.reservation-info {
+  border: 2px solid white;
+  margin-top: 12px;
+  height: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.reservation-container {
+  width: 100%;
+  height: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pokemon-info {
+  width: 100%;
+  height: 50%;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.pokemon-image-container {
+  width: 50%;
+  height: 50%;
+  border: 2px solid black;
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.pokemon-types {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.type {
+  list-style: none;
+  border: 1px solid black;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.previous-reservations {
+  border: 2px solid blue;
+  height: 40%;
+  width: 90%;
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  color: white;
+  overflow-y: scroll;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  height: 24px;
+  border: 1px solid white;
+  background-color: black;
+}
+
+tbody {
+  color: white;
+  padding-top: 24px;
+}
+
+td {
+  border: 1px solid white;
+  height: 36px;
+  font-weight: bold;
+}
+
+.reservation-form {
+  height: 50%;
+  width: 90%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border: 2px solid blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-reservation {
+  margin-top: 12px;
+}
+
+.close-btn {
+  border: 2px solid blue;
+  height: 20px;
+  width: 20px;
+  color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+  color: white;
 }
 
 @media screen and (min-width: 321px) {
@@ -206,10 +363,6 @@ button:active {
     width: 25%;
   }
 
-  .comment-area {
-    min-height: 60%;
-  }
-
   .popupCard {
     flex-direction: row;
     top: 10%;
@@ -217,12 +370,50 @@ button:active {
     z-index: 999;
     height: 80%;
     width: 70%;
-    overflow-y: scroll;
   }
 
   .left-side,
-  .comment-section {
+  .comment-section,
+  .reservation-info {
     width: 100%;
+    flex-direction: row;
+    height: 80%;
+    margin-top: 24px;
+  }
+
+  .reservation-container {
+    width: 50%;
+    height: 100%;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .pokemon-info {
+    width: 50%;
+    height: 100%;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+  }
+
+  .pokemon-image-container {
+    width: 30%;
+    height: 30%;
+    border: 2px solid black;
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .close-btn {
+    top: 24px;
+    right: 24px;
   }
 }
 
@@ -235,5 +426,7 @@ button:active {
 @media screen and (min-width: 1600px) {
   .PokeCard {
     width: 16%;
+  }
+}
   }
 }
