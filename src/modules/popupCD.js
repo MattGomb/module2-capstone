@@ -107,8 +107,7 @@ const createPopup = (object) => {
       commentArea.appendChild(newComment);
     });
     const newcomments = document.querySelectorAll('.new-comment');
-    /* commentCounter(newcomments, newComments); */
-    console.log(newcomments)
+    commentCounter(newcomments, newComments); 
   };
   
   
