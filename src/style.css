@@ -76,8 +76,17 @@ main {
   border-radius: 0.5rem;
 }
 
-.name {
+.header {
+  display: flex;
+  justify-content: space-between;
   padding: 0.5rem;
+  align-items: baseline;
+}
+
+.id {
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding-right: 0.5rem;
 }
 
 .picDiv,
@@ -116,6 +125,74 @@ button:hover {
   cursor: pointer;
   transform: translateY(-1px);
   box-shadow: 1px 1px rgb(71, 71, 71);
+}
+
+button:active {
+  cursor: pointer;
+  transform: translateY(1px);
+  box-shadow: 1px 1px rgb(71, 71, 71);
+}
+
+.popupCard {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 10%;
+  left: 2%;
+  z-index: 999;
+  height: 80%;
+  width: 95%;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 1rem;
+}
+
+.left-side,
+.comment-section {
+  width: 100%;
+}
+
+.popupPoke {
+  margin: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
+
+.comment-section {
+  display: flex;
+  flex-direction: column;
+}
+
+#comment-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.new-comments {
+  padding: 0.5rem;
+}
+
+.comment-area {
+  min-height: 60%;
+  border: 1px solid black;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  overflow-y: scroll;
+}
+
+input {
+  width: 90%;
+  height: 24px;
+  margin-top: 5px;
+  padding-left: 5px;
+}
+
+.new-comments input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
 }
 
 .reservation-popup {
@@ -243,13 +320,6 @@ td {
   justify-content: center;
 }
 
-input {
-  width: 90%;
-  height: 24px;
-  margin-top: 5px;
-  padding-left: 5px;
-}
-
 .submit-reservation {
   margin-top: 12px;
 }
@@ -298,7 +368,19 @@ input {
     width: 25%;
   }
 
+  .popupCard {
+    flex-direction: row;
+    top: 10%;
+    left: 15%;
+    z-index: 999;
+    height: 80%;
+    width: 70%;
+  }
+
+  .left-side,
+  .comment-section,
   .reservation-info {
+    width: 100%;
     flex-direction: row;
     height: 80%;
     margin-top: 24px;
@@ -337,6 +419,12 @@ input {
   .close-btn {
     top: 24px;
     right: 24px;
+  }
+
+  .reservation-info {
+    flex-direction: row;
+    height: 80%;
+    margin-top: 24px;
   }
 }
 

@@ -2,6 +2,7 @@
 import getReservation from './get_reservation.js';
 import postReservation from './add_reservation.js';
 import reservationCounter from './reservation_counter.js';
+import commentsPopup from './popupCD.js';
 
 // This function is created to display the information of each pokemon in a popup
 
@@ -173,8 +174,16 @@ window.onload = () => {
   const btn = document.querySelectorAll('.reserve');
   btn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-      const name = e.target.parentElement.parentElement.firstChild.textContent;
+      const name = e.target.parentElement.parentElement.firstChild.firstChild.textContent;
       reservationPopup(name);
+    });
+  });
+
+  const btn2 = document.querySelectorAll('.comment');
+  btn2.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const name = e.target.parentElement.parentElement.children[0].children[0].innerHTML;
+      commentsPopup(name);
     });
   });
 };
