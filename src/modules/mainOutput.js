@@ -1,4 +1,4 @@
-
+/* eslint-disable linebreak-style */
 const codex = document.querySelector('#main-container');
 
 const retrieve = (item) => {
