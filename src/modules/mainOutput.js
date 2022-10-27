@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import liked from './likesCounter.js';
 
 const codex = document.querySelector('#main-container');

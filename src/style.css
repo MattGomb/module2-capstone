@@ -197,8 +197,8 @@ input {
 
 .reservation-popup {
   position: fixed;
-  top: 10%;
-  bottom: 10%;
+  top: 5%;
+  bottom: 5%;
   left: 10%;
   right: 10%;
   background-color: rgb(158, 2, 2);
@@ -342,6 +342,11 @@ td {
 .close-btn:hover {
   transform: scale(1.1);
   color: white;
+}
+
+.reservation-title {
+  color: white;
+  margin-top: 12px;
 }
 
 @media screen and (min-width: 321px) {
