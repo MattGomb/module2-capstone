@@ -1,7 +1,6 @@
 /* eslint-disable linebreak-style */
 import getReservation from './get_reservation.js';
 import postReservation from './add_reservation.js';
-import commentsPopup from './popupCD.js';
 import reservationCounter from './reservation_counter.js';
 
 // This function is created to display the information of each pokemon in a popup

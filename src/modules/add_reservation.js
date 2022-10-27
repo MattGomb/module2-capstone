@@ -17,8 +17,6 @@ const postReservation = async (id, name, dateStart, dateEnd) => {
           'Content-Type': 'application/json',
         },
       });
-  } else {
-    alert('FILL ALL THE CAMPS');
   }
 };
 
