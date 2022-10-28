@@ -1,6 +1,6 @@
 import postComment from './addCommentAPI.js';
 import getComment from './getCommentAPI.js';
-import commentCounter from './commentCounter.js';
+import commentCounter1 from './commentCounter.js';
 
 const createPopup = (object) => {
   const popupContainer = document.createElement('div');
@@ -112,7 +112,7 @@ const createPopup = (object) => {
     counterText.textContent = `Total comments: ${counter}`;
     bottom.appendChild(counterText); */
     const newComment1 = document.querySelectorAll('.new-comment');
-    commentCounter(newComment1, bottom);
+    commentCounter1(newComment1, bottom);
   };
   
 
