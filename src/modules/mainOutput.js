@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 import liked from './likesCounter.js';
-import cardsNumber from './cardsCounter';
+import cardsNumber from './cardsCounter.js';
 
 const codex = document.querySelector('#main-container');
 
