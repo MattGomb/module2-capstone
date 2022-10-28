@@ -2,14 +2,15 @@
 
 # Project Name
 
-> This is the second capstone project of the Microverse program. Our project is a pokémon index, listing the original 151 from the first season.
+> This is the second capstone project of the Microverse program. Our project is a pokémon index, listing the original 151 from the first season. 
+  The project was set up via webpack, the testing was done with jest, and we used babel to compile the JavaScript.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- JavaScript, HTML, CSS
+- webpack, jest, babel
+- Git, GitHub, Gitflow, VSCode
 
 ## Live Demo (if available)
 
@@ -18,25 +19,51 @@
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+To get a local copy up and running follow these simple example steps:
 
+1 - Above the list of files, click on the "Code" button
 
-To get a local copy up and running follow these simple example steps.
+2 - Copy the URL for the repository.
+
+3 - To clone the repository using HTTPS, under "HTTPS", click . To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click SSH, then click . To clone a repository using GitHub CLI, click GitHub CLI, then click . The clipboard icon for copying the URL to clone a repository with GitHub CLI
+
+4 - Open Git Bash.
+
+5 - Change the current working directory to the location where you want the cloned directory.
+
+6 - Type git clone, and then paste the URL you copied earlier.
+
+7 - Press Enter to create your local clone.
+
+8 - To get started with the exact same setup, don't forget to install webpack, babel, and jest on your computer!
+
 
 ### Prerequisites
 
+- Installation of Node.js, Node Package Manager, webpack module bundler, and Babel 
+- Functioning computer Internet connection 
+- Basic understanding of Git and GitHub
+- Basic JavaScript, HTML, and CSS knowledge
+
 ### Setup
+
+- [The setup of webpack](https://webpack.js.org/guides/getting-started/)
+- [The setup of jest](https://jest-bot.github.io/jest/docs/getting-started.html)
+- [The setup of babel](https://babeljs.io/setup)
+
+Please read the documentation to get familiar with each of them!
 
 ### Install
 
+- A code editor (e.g. VSC) /text editor (e.g. notepad++) Node.js
+
 ### Usage
+
+Feel free to use this repo to play around with basic HTML, CSS, and JavaScript elements and solutions
 
 ### Run tests
 
-### Deployment
-
-
+No testing required, but you can always take a look at the jest testing environment and create new tests for functions.
 
 ## Authors
 
@@ -68,11 +95,6 @@ Feel free to check the [issues page](../../issues/).
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
