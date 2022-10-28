@@ -22,7 +22,7 @@ const newLikes = (item) => {
 };
 
 const retrieve = (item) => {
-  const card = document.createElement('div'); // Card Div
+  const card = document.createElement('div');
   card.setAttribute('class', 'PokeCard');
   codex.appendChild(card);
 
@@ -30,7 +30,7 @@ const retrieve = (item) => {
   header.classList.add('header');
   card.appendChild(header);
 
-  const pokeName = document.createElement('h3'); // Card Tittle
+  const pokeName = document.createElement('h3'); 
   pokeName.classList.add('name');
   pokeName.innerText = item.name;
   header.appendChild(pokeName);
