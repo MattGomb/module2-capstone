@@ -1,4 +1,6 @@
+/* eslint-disable linebreak-style */
 import liked from './likesCounter.js';
+import cardsNumber from './cardsCounter';
 
 const codex = document.querySelector('#main-container');
 
@@ -90,6 +92,7 @@ const retrieve = (item) => {
 
   liked(item.name);
   newLikes(item.name);
+  cardsNumber('PokeCard');
 };
 
 for (let i = 1; i < 152; i += 1) {

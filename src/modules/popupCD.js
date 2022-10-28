@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import postComment from './addCommentAPI.js';
 import getComment from './getCommentAPI.js';
 import commentCounter1 from './commentCounter.js';
@@ -127,7 +128,7 @@ const createPopup = (object) => {
   });
 };
 
-const reservationPopup = (name) => {
+const commentsPopup = (name) => {
   const link = 'https://pokeapi.co/api/v2/pokemon/';
   const newLink = link + name;
   const pokemonObject = async () => {
@@ -138,12 +139,4 @@ const reservationPopup = (name) => {
   pokemonObject();
 };
 
-window.onload = () => {
-  const btn = document.querySelectorAll('.comment');
-  btn.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      const name = e.target.parentElement.parentElement.children[0].children[0].innerHTML;
-      reservationPopup(name);
-    });
-  });
-};
+export default commentsPopup;

@@ -1,6 +1,8 @@
 /* eslint-disable linebreak-style */
 import getReservation from './get_reservation.js';
 import postReservation from './add_reservation.js';
+import reservationCounter from './reservation_counter.js';
+import commentsPopup from './popupCD.js';
 
 // This function is created to display the information of each pokemon in a popup
 
@@ -117,8 +119,14 @@ const createPopup = (object) => {
     recentReservations.forEach((reservation) => {
       const tr = document.createElement('tr');
       tr.innerHTML = `<td>${reservation.username}</td><td>${reservation.date_start}</td><td>${reservation.date_end}</td>`;
+      tr.setAttribute('class', 'reserved');
       tbody.appendChild(tr);
     });
+
+    // Here is the counter for the reservations
+
+    const reserved1 = document.querySelectorAll('.reserved');
+    reservationCounter(reserved1, reservationPlace);
   };
 
   displayReservations();
@@ -132,6 +140,8 @@ const createPopup = (object) => {
 
   submitReservation.addEventListener('click', async (e) => {
     const tbody = document.querySelector('tbody');
+    const counter = document.querySelector('.reservation-title');
+    counter.remove();
     tbody.remove();
     e.preventDefault();
     await postReservation(object.id, username.value, dateStart.value, dateEnd.value);
@@ -164,8 +174,16 @@ window.onload = () => {
   const btn = document.querySelectorAll('.reserve');
   btn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-      const name = e.target.parentElement.parentElement.firstChild.textContent;
+      const name = e.target.parentElement.parentElement.firstChild.firstChild.textContent;
       reservationPopup(name);
+    });
+  });
+
+  const btn2 = document.querySelectorAll('.comment');
+  btn2.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const name = e.target.parentElement.parentElement.children[0].children[0].innerHTML;
+      commentsPopup(name);
     });
   });
 };
