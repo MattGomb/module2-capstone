@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 import postComment from './addCommentAPI.js';
 import getComment from './getCommentAPI.js';
+import commentCounter1 from './commentCounter.js';
 
 const createPopup = (object) => {
   const popupContainer = document.createElement('div');
@@ -62,7 +63,7 @@ const createPopup = (object) => {
   commentHeader.appendChild(closeBtn);
 
   const commentArea = document.createElement('div');
-  commentArea.classList.add('comment-area');
+  commentArea.setAttribute('id', 'comment-area');
   commentSection.appendChild(commentArea);
 
   const newComments = document.createElement('div');
@@ -83,11 +84,15 @@ const createPopup = (object) => {
   input2.setAttribute('placeholder', 'your insigths');
   newComments.appendChild(input2);
 
+  const bottom = document.createElement('div');
+  bottom.classList.add('bottom-div');
+  newComments.appendChild(bottom);
+
   const submitBtn = document.createElement('button');
   submitBtn.setAttribute('type', 'submit');
   submitBtn.setAttribute('id', 'submit-button');
   submitBtn.textContent = 'Submit';
-  newComments.appendChild(submitBtn);
+  bottom.appendChild(submitBtn);
 
   closeBtn.addEventListener('click', (e) => {
     e.target.parentElement.parentElement.parentElement.remove();
@@ -98,9 +103,17 @@ const createPopup = (object) => {
     await recentComments.reverse();
     recentComments.forEach((comment) => {
       const newComment = document.createElement('div');
+      newComment.classList.add('new-comment');
       newComment.innerHTML = `<p class="input-date">${comment.creation_date}</p><p class="comment-name">${comment.username}</p><p class="comment-msg">${comment.comment}</p>`;
       commentArea.appendChild(newComment);
     });
+    /*  const counter = document.querySelectorAll('.new-comment').length;
+    const counterText = document.createElement('p');
+    counterText.setAttribute('id', 'counter');
+    counterText.textContent = `Total comments: ${counter}`;
+    bottom.appendChild(counterText); */
+    const newComment1 = document.querySelectorAll('.new-comment');
+    commentCounter1(newComment1, bottom);
   };
 
   displayComments();

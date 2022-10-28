@@ -126,7 +126,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_mainOutput_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/mainOutput.js */ \"./src/modules/mainOutput.js\");\n/* harmony import */ var _modules_popupCD_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/popupCD.js */ \"./src/modules/popupCD.js\");\n/* harmony import */ var _modules_reservation_popup_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/reservation_popup.js */ \"./src/modules/reservation_popup.js\");\n/* eslint-disable linebreak-style */\n\n\n\n\n\n\n//# sourceURL=webpack://webpack-boilerplate/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_mainOutput_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/mainOutput.js */ \"./src/modules/mainOutput.js\");\n/* harmony import */ var _modules_reservation_popup_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/reservation_popup.js */ \"./src/modules/reservation_popup.js\");\n/* harmony import */ var _modules_popupCD_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/popupCD.js */ \"./src/modules/popupCD.js\");\n/* harmony import */ var _modules_commentCounter_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/commentCounter.js */ \"./src/modules/commentCounter.js\");\n\n\n\n\n\n\n\n//# sourceURL=webpack://webpack-boilerplate/./src/index.js?");
 
 /***/ }),
 
@@ -147,6 +147,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* eslint-disable linebreak-style */\n\nconst postReservation = async (id, name, dateStart, dateEnd) => {\n  if (name.length > 0 && dateStart.length > 0 && dateEnd.length > 0) {\n    await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/q43Np4AB1ka0fqpIWSXs/reservations/',\n      {\n        method: 'POST',\n        body: JSON.stringify(\n          {\n            item_id: id,\n            username: name,\n            date_start: dateStart,\n            date_end: dateEnd,\n          },\n        ),\n        headers: {\n          'Content-Type': 'application/json',\n        },\n      });\n  }\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (postReservation);\n\n//# sourceURL=webpack://webpack-boilerplate/./src/modules/add_reservation.js?");
+
+/***/ }),
+
+/***/ "./src/modules/commentCounter.js":
+/*!***************************************!*\
+  !*** ./src/modules/commentCounter.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst commentCounter1 = (classCount, append) => {\n  const counter = classCount.length;\n  const counterText = document.createElement('p');\n  counterText.setAttribute('id', 'counter');\n  counterText.textContent = `Total comments: ${counter}`;\n  append.appendChild(counterText);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (commentCounter1);\n\n//# sourceURL=webpack://webpack-boilerplate/./src/modules/commentCounter.js?");
 
 /***/ }),
 
@@ -207,6 +217,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* eslint-disable linebreak-style */\n\nconst reservationCounter = (classToCount, append) => {\n  const counter = classToCount.length;\n  const reservationCounter = document.createElement('h3');\n  reservationCounter.className = 'reservation-title';\n  reservationCounter.textContent = `Recent Reservations (${counter})`;\n  append.prepend(reservationCounter);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (reservationCounter);\n\n//# sourceURL=webpack://webpack-boilerplate/./src/modules/reservation_counter.js?");
+
 
 /***/ }),
 

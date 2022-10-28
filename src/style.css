@@ -136,7 +136,6 @@ button:active {
 .popupCard {
   position: fixed;
   display: flex;
-  flex-direction: column;
   top: 10%;
   left: 2%;
   z-index: 999;
@@ -173,12 +172,12 @@ button:active {
   padding: 0.5rem;
 }
 
-.comment-area {
-  min-height: 60%;
+#comment-area {
   border: 1px solid black;
   margin: 0.5rem;
   border-radius: 0.5rem;
   overflow-y: scroll;
+  height: 10rem;
 }
 
 input {
@@ -369,7 +368,6 @@ td {
   }
 
   .popupCard {
-    flex-direction: row;
     top: 10%;
     left: 15%;
     z-index: 999;
@@ -378,7 +376,6 @@ td {
   }
 
   .left-side,
-  .comment-section,
   .reservation-info {
     width: 100%;
     flex-direction: row;
@@ -425,6 +422,10 @@ td {
     flex-direction: row;
     height: 80%;
     margin-top: 24px;
+  }
+
+  #comment-area {
+    min-height: 60%;
   }
 }
 
