@@ -74,6 +74,10 @@ main {
   width: 80%;
   border: 1px solid black;
   border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .header {
@@ -92,6 +96,7 @@ main {
 .picDiv,
 .intro {
   border: 1px solid black;
+  width: 90%;
 }
 
 .picDiv {
@@ -100,11 +105,14 @@ main {
   background-color: rgb(255, 255, 255, 0.7);
   border-radius: 0.5rem;
   margin: 0 0.5rem;
+  margin-top: 12px;
+  height: 40%;
 }
 
 .intro {
-  min-height: 6rem;
+  min-height: 5rem;
   margin: 1rem;
+  margin-bottom: 12px;
   padding: 0.5rem;
   background-color: rgb(255, 255, 255, 0.5);
   border-radius: 0.5rem;
@@ -113,11 +121,12 @@ main {
 .buttons {
   display: flex;
   justify-content: space-around;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
 }
 
 button {
-  padding: 0.5rem;
+  padding: 0.3rem;
+  margin: 5px;
   border-radius: 0.5rem;
 }
 
@@ -133,29 +142,18 @@ button:active {
   box-shadow: 1px 1px rgb(71, 71, 71);
 }
 
-.popupCard {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  top: 10%;
-  left: 2%;
-  z-index: 999;
-  height: 80%;
-  width: 95%;
-  background-color: white;
-  border: 3px solid black;
-  border-radius: 1rem;
-}
-
-.left-side,
-.comment-section {
-  width: 100%;
-}
-
-.popupPoke {
-  margin: 1rem;
+.pokemon-data {
+  margin: auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
   border: 1px solid black;
   border-radius: 0.5rem;
+  height: 80%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .comment-section {
@@ -195,13 +193,13 @@ input {
   border-radius: 0.5rem;
 }
 
-.reservation-popup {
+.popup-card {
   position: fixed;
-  top: 5%;
-  bottom: 5%;
-  left: 10%;
-  right: 10%;
-  background-color: rgb(158, 2, 2);
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  background-color: white;
   border: 2px solid black;
   display: flex;
   flex-direction: column;
@@ -210,15 +208,15 @@ input {
 
 .pokemon-name {
   font-size: 2rem;
-  color: white;
+  color: black;
   font-weight: bold;
   width: 100%;
   text-align: center;
   margin-top: 12px;
 }
 
-.reservation-info {
-  border: 2px solid white;
+.popup-info {
+  border: 2px solid black;
   margin-top: 12px;
   height: 90%;
   width: 90%;
@@ -236,7 +234,7 @@ input {
   flex-direction: column;
 }
 
-.pokemon-info {
+.left-side {
   width: 100%;
   height: 50%;
   border: 2px solid black;
@@ -247,20 +245,10 @@ input {
   background-color: white;
 }
 
-.pokemon-image-container {
-  width: 50%;
-  height: 50%;
-  border: 2px solid black;
-  margin-top: 12px;
-  display: flex;
-  justify-content: center;
-}
-
 .pokemon-types {
   width: 150px;
   display: flex;
   justify-content: center;
-  margin-top: 12px;
 }
 
 .type {
@@ -272,7 +260,7 @@ input {
 }
 
 .previous-reservations {
-  border: 2px solid blue;
+  border: 2px solid black;
   height: 40%;
   width: 90%;
   margin-top: 12px;
@@ -280,7 +268,7 @@ input {
   justify-content: center;
   align-items: flex-start;
   text-align: center;
-  color: white;
+  color: black;
   overflow-y: scroll;
 }
 
@@ -293,17 +281,18 @@ thead {
   position: sticky;
   top: 0;
   height: 24px;
-  border: 1px solid white;
+  border: 1px solid black;
   background-color: black;
+  color: white;
 }
 
 tbody {
-  color: white;
+  color: black;
   padding-top: 24px;
 }
 
 td {
-  border: 1px solid white;
+  border: 1px solid black;
   height: 36px;
   font-weight: bold;
 }
@@ -313,7 +302,7 @@ td {
   width: 90%;
   margin-top: 12px;
   margin-bottom: 12px;
-  border: 2px solid blue;
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -325,10 +314,10 @@ td {
 }
 
 .close-btn {
-  border: 2px solid blue;
+  border: 2px solid black;
   height: 20px;
   width: 20px;
-  color: blue;
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -341,11 +330,11 @@ td {
 
 .close-btn:hover {
   transform: scale(1.1);
-  color: white;
+  color: black;
 }
 
 .reservation-title {
-  color: white;
+  color: black;
   margin-top: 12px;
 }
 
@@ -368,20 +357,9 @@ td {
     width: 25%;
   }
 
-  .popupCard {
-    flex-direction: row;
-    top: 10%;
-    left: 15%;
-    z-index: 999;
-    height: 80%;
-    width: 70%;
-  }
-
-  .left-side,
-  .comment-section,
-  .reservation-info {
-    width: 100%;
-    flex-direction: row;
+  .comment-section {
+    width: 50%;
+    flex-direction: column;
     height: 80%;
     margin-top: 24px;
   }
@@ -396,10 +374,9 @@ td {
     flex-direction: column;
   }
 
-  .pokemon-info {
+  .left-side {
     width: 50%;
     height: 100%;
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -407,30 +384,33 @@ td {
     background-color: white;
   }
 
-  .pokemon-image-container {
-    width: 30%;
-    height: 30%;
-    border: 2px solid black;
-    margin-top: 12px;
-    display: flex;
-    justify-content: center;
-  }
-
   .close-btn {
     top: 24px;
     right: 24px;
   }
 
-  .reservation-info {
+  .popup-info {
     flex-direction: row;
     height: 80%;
     margin-top: 24px;
+  }
+
+  .popup-card {
+    top: 10%;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .PokeCard {
     width: 20%;
+  }
+
+  .pokemon-data {
+    height: 60%;
+    width: 50%;
   }
 }
 
