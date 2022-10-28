@@ -118,7 +118,7 @@ const createPopup = (object) => {
     recentComments.forEach((comment) => {
       const newComment = document.createElement('div');
       newComment.classList.add('new-comment');
-      newComment.innerHTML = `<p class="input-date">${comment.creation_date}</p><p class="comment-name">${comment.username}</p><p class="comment-msg">${comment.comment}</p>`;
+      newComment.innerHTML = `<p class="input-date">${comment.creation_date}</p><p class="comment-name">${comment.username}:</p><p class="comment-msg">${comment.comment}</p>`;
       commentArea.appendChild(newComment);
     });
     /*  const counter = document.querySelectorAll('.new-comment').length;
