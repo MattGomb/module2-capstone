@@ -17,8 +17,7 @@ const newLikes = (item) => {
           pokeNumber.textContent = pokeLikes[i].likes;
         }
       }
-    })
-    .catch((err) => console.log(err));
+    });
 };
 
 const retrieve = (item) => {
@@ -30,7 +29,7 @@ const retrieve = (item) => {
   header.classList.add('header');
   card.appendChild(header);
 
-  const pokeName = document.createElement('h3'); 
+  const pokeName = document.createElement('h3');
   pokeName.classList.add('name');
   pokeName.innerText = item.name;
   header.appendChild(pokeName);

@@ -9,6 +9,9 @@
 
 button {
   background-color: rgb(255, 255, 255, 0.8);
+  padding: 0.3rem;
+  margin: 5px;
+  border-radius: 0.5rem;
 }
 
 #page-container {
@@ -140,12 +143,6 @@ main {
   padding-bottom: 0.3rem;
 }
 
-button {
-  padding: 0.3rem;
-  margin: 5px;
-  border-radius: 0.5rem;
-}
-
 button:hover {
   cursor: pointer;
   transform: translateY(-1px);
@@ -209,7 +206,11 @@ input {
   border-radius: 0.5rem;
 }
 
-.popup-card, .popup-info, .left-side, .reservation-container, .reservation-form{
+.popup-card,
+.popup-info,
+.left-side,
+.reservation-container,
+.reservation-form {
   border-radius: 1rem;
 }
 
@@ -354,7 +355,9 @@ td {
   margin-top: 12px;
 }
 
-.comment-name, .comment-msg, .input-date {
+.comment-name,
+.comment-msg,
+.input-date {
   padding: 0.25rem;
 }
 

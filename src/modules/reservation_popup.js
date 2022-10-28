@@ -49,7 +49,7 @@ const createPopup = (object) => {
   header.classList.add('header');
   pokemonData.appendChild(header);
 
-  const pokeName = document.createElement('h3'); 
+  const pokeName = document.createElement('h3');
   pokeName.classList.add('name');
   pokeName.innerText = object.name;
   header.appendChild(pokeName);
