@@ -2,7 +2,7 @@
 
 # Project Name
 
-> Description the project.
+> This is the second capstone project of the Microverse program. Our project is a pokémon index, listing the original 151 from the first season.
 
 
 ## Built With
@@ -40,17 +40,23 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Author1**
+👤 **Damiel Carrera**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@carreraprogrammer](https://github.com/carreraprogrammer )
+- Twitter: [@carreraprog](https://twitter.com/carreraprog)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/daniel-carrera-85a917244/)
 
-👤 **Author2**
+👤 **Lucas Bermudez**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Oklukeok](https://github.com/Oklukeok)
+- Twitter: [@ok_Lukee](https://twitter.com/ok_Lukee)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/lucas-bermudez/)
+
+👤 **Mátyás Gombos**
+
+- GitHub: [@MattGomb](https://github.com/MattGomb)
+- Twitter: [@MtysGombos1](https://twitter.com/MtysGombos1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/gombos-m%C3%A1ty%C3%A1s-28139771/)
 
 ## 🤝 Contributing
 
