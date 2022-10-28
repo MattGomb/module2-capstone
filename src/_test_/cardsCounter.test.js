@@ -7,26 +7,14 @@ import cardsNumber from '../modules/cardsCounter';
 //import reservationCounter from '../modules/reservation_counter.js';
 
 test('Add a new title with the number of reservations to one div', () => {
-  document.body.innerHTML = 
+  document.body.innerHTML =
+   '<h1 id="title"></h1>'
     + '  <div class="PokeCard"></div>'
     + '  <div class="PokeCard"></div>'
-    + '  <div class="PokeCard"></div>'
-    
-    const cardsResult = document.getElementById('title');
-  
+    + '  <div class="PokeCard"></div>';
+
+  const cardsResult = document.getElementById('title');
 
   cardsNumber('PokeCard');
-  expect(cardsResult).toBe('PokeCodex (3)');
-});
-
-test('Should return 0 if the .reservations counter is 0', () => {
-  document.body.innerHTML = '<div>'
-  + '  <div class="title"></div>'
-  + '<ul></ul>'
-  + '</div>';
-  const itemToCount = document.querySelectorAll('.reservation');
-  const divToAppend = document.querySelector('.title');
-
-  reservationCounter(itemToCount, divToAppend);
-  expect(divToAppend.textContent).toBe('Reservations (0)');
+  expect(cardsResult.textContent).toBe('PokeCodex (3)');
 });
