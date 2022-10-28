@@ -121,6 +121,7 @@ const createPopup = (object) => {
   submitBtn.addEventListener('click', async (e) => {
     e.preventDefault();
     commentArea.innerHTML = '';
+    document.querySelector('#counter').remove();
     await postComment(object.id, input1.value, input2.value);
     await displayComments();
     input1.value = '';
