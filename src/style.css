@@ -146,6 +146,7 @@ button:active {
   margin: auto;
   margin-top: 24px;
   margin-bottom: 24px;
+
   border: 1px solid black;
   border-radius: 0.5rem;
   height: 80%;
@@ -171,12 +172,12 @@ button:active {
   padding: 0.5rem;
 }
 
-.comment-area {
-  min-height: 60%;
+#comment-area {
   border: 1px solid black;
   margin: 0.5rem;
   border-radius: 0.5rem;
   overflow-y: scroll;
+  height: 10rem;
 }
 
 input {
@@ -360,6 +361,17 @@ td {
   .comment-section {
     width: 50%;
     flex-direction: column;
+  }
+  .popupCard {
+    top: 10%;
+    left: 15%;
+    z-index: 999;
+    height: 80%;
+    width: 70%;
+  }
+
+  .left-side,
+  .reservation-info {
     height: 80%;
     margin-top: 24px;
   }
