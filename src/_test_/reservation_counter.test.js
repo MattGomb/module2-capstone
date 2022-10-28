@@ -14,5 +14,17 @@ test('Add a new title with the number of reservations to one div', () => {
   const divToAppend = document.querySelector('.title');
 
   reservationCounter(itemToCount, divToAppend);
-  expect(divToAppend.textContent).toBe('Recent Reservations (3)');
+  expect(divToAppend.textContent).toBe('Reservations (3)');
+});
+
+test('Should return 0 if the .reservations counter is 0', () => {
+  document.body.innerHTML = '<div>'
+  + '  <div class="title"></div>'
+  + '<ul></ul>'
+  + '</div>';
+  const itemToCount = document.querySelectorAll('.reservation');
+  const divToAppend = document.querySelector('.title');
+
+  reservationCounter(itemToCount, divToAppend);
+  expect(divToAppend.textContent).toBe('Reservations (0)');
 });
