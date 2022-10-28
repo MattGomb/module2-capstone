@@ -1,6 +1,6 @@
 import postComment from './addCommentAPI.js';
-import commentCounter from './commentCounter.js';
 import getComment from './getCommentAPI.js';
+import commentCounter from './commentCounter.js';
 
 const createPopup = (object) => {
   const popupContainer = document.createElement('div');
@@ -84,7 +84,7 @@ const createPopup = (object) => {
   newComments.appendChild(input2);
 
   const bottom = document.createElement('div');
-  bottom.setAttribute('id', 'bottom-div');
+  bottom.classList.add('bottom-div');
   newComments.appendChild(bottom)
 
   const submitBtn = document.createElement('button');
@@ -92,11 +92,11 @@ const createPopup = (object) => {
   submitBtn.setAttribute('id', 'submit-button');
   submitBtn.textContent = 'Submit';
   bottom.appendChild(submitBtn);
-
+  
   closeBtn.addEventListener('click', (e) => {
     e.target.parentElement.parentElement.parentElement.remove();
   });
-
+  
   const displayComments = async () => {
     const recentComments = await getComment(object.id);
     await recentComments.reverse();
@@ -106,14 +106,18 @@ const createPopup = (object) => {
       newComment.innerHTML = `<p class="input-date">${comment.creation_date}</p><p class="comment-name">${comment.username}</p><p class="comment-msg">${comment.comment}</p>`;
       commentArea.appendChild(newComment);
     });
-    const newcomments = document.querySelectorAll('.new-comment');
-    commentCounter(newcomments, newComments); 
+    /*  const counter = document.querySelectorAll('.new-comment').length;
+    const counterText = document.createElement('p');
+    counterText.setAttribute('id', 'counter');
+    counterText.textContent = `Total comments: ${counter}`;
+    bottom.appendChild(counterText); */
+    const newComment1 = document.querySelectorAll('.new-comment');
+    commentCounter(newComment1, bottom);
   };
   
-  
+
   displayComments();
   
-
   submitBtn.addEventListener('click', async (e) => {
     e.preventDefault();
     commentArea.innerHTML = '';
