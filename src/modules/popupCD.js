@@ -85,18 +85,18 @@ const createPopup = (object) => {
 
   const bottom = document.createElement('div');
   bottom.classList.add('bottom-div');
-  newComments.appendChild(bottom)
+  newComments.appendChild(bottom);
 
   const submitBtn = document.createElement('button');
   submitBtn.setAttribute('type', 'submit');
   submitBtn.setAttribute('id', 'submit-button');
   submitBtn.textContent = 'Submit';
   bottom.appendChild(submitBtn);
-  
+
   closeBtn.addEventListener('click', (e) => {
     e.target.parentElement.parentElement.parentElement.remove();
   });
-  
+
   const displayComments = async () => {
     const recentComments = await getComment(object.id);
     await recentComments.reverse();
@@ -114,10 +114,9 @@ const createPopup = (object) => {
     const newComment1 = document.querySelectorAll('.new-comment');
     commentCounter1(newComment1, bottom);
   };
-  
 
   displayComments();
-  
+
   submitBtn.addEventListener('click', async (e) => {
     e.preventDefault();
     commentArea.innerHTML = '';
