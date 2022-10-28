@@ -156,7 +156,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst commentCounter = (classCount, append) => {\n  const counter = classCount.length;\n  const counterText = document.createElement('p');\n  counterText.setAttribute('id', 'counter');\n  counterText.textContent = `Total comments: ${counter}`;\n  append.appendChild(counterText);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (commentCounter());\n\n\n//# sourceURL=webpack://webpack-boilerplate/./src/modules/commentCounter.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst commentCounter1 = (classCount, append) => {\n  const counter = classCount.length;\n  const counterText = document.createElement('p');\n  counterText.setAttribute('id', 'counter');\n  counterText.textContent = `Total comments: ${counter}`;\n  append.appendChild(counterText);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (commentCounter1);\n\n//# sourceURL=webpack://webpack-boilerplate/./src/modules/commentCounter.js?");
 
 /***/ }),
 
