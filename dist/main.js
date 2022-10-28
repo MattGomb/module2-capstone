@@ -226,7 +226,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* eslint-disable linebreak-style */\n\nconst reservationCounter = (classToCount, append) => {\n  const counter = classToCount.length;\n  const reservationCounter = document.createElement('h3');\n  reservationCounter.className = 'reservation-title';\n  reservationCounter.textContent = `Recent Reservations (${counter})`;\n  append.prepend(reservationCounter);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (reservationCounter);\n\n//# sourceURL=webpack://webpack-boilerplate/./src/modules/reservation_counter.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* eslint-disable linebreak-style */\n\nconst reservationCounter = (classToCount, append) => {\n  const counter = classToCount.length;\n  const reservationCounter = document.createElement('h3');\n  reservationCounter.className = 'reservation-title';\n  reservationCounter.textContent = `Reservations (${counter})`;\n  append.prepend(reservationCounter);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (reservationCounter);\n\n//# sourceURL=webpack://webpack-boilerplate/./src/modules/reservation_counter.js?");
 
 /***/ }),
 
