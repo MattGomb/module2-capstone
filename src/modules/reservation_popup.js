@@ -10,7 +10,7 @@ const createPopup = (object) => {
   // First I created a popup container that is going to appear when I click the button
 
   const popupContainer = document.createElement('div');
-  popupContainer.setAttribute('class', 'reservation-popup');
+  popupContainer.setAttribute('class', 'popup-card');
   const body = document.querySelector('body');
   body.appendChild(popupContainer);
 
@@ -23,30 +23,46 @@ const createPopup = (object) => {
 
   // I want to create one section to contain the pokemon information and the reservation form
 
-  const reservationInfo = document.createElement('div');
-  reservationInfo.setAttribute('class', 'reservation-info');
-  popupContainer.appendChild(reservationInfo);
+  const popupInfo = document.createElement('div');
+  popupInfo.setAttribute('class', 'popup-info');
+  popupContainer.appendChild(popupInfo);
 
   // After this I want to create one section to put the pokemon information
 
-  const pokemonInfo = document.createElement('div');
-  pokemonInfo.setAttribute('class', 'pokemon-info');
-  reservationInfo.appendChild(pokemonInfo);
+  const leftSide = document.createElement('div');
+  leftSide.setAttribute('class', 'left-side');
+  popupInfo.appendChild(leftSide);
 
   // And I want to create one section to put the reservation form
 
   const reservationPlace = document.createElement('div');
   reservationPlace.setAttribute('class', 'reservation-container');
-  reservationInfo.appendChild(reservationPlace);
+  popupInfo.appendChild(reservationPlace);
 
   // To start with the setup of the pokemon information, I will start putting the image
 
+  const pokemonData = document.createElement('div');
+  pokemonData.classList.add('pokemon-data');
+  leftSide.appendChild(pokemonData);
+
+  const imgContainer = document.createElement('div');
+  imgContainer.classList.add('picDiv');
   const pokemonImage = document.createElement('img');
-  const pokemonImageContainer = document.createElement('div');
-  pokemonImageContainer.setAttribute('class', 'pokemon-image-container');
   pokemonImage.setAttribute('src', object.sprites.front_default);
-  pokemonInfo.appendChild(pokemonImageContainer);
-  pokemonImageContainer.appendChild(pokemonImage);
+  pokemonImage.setAttribute('alt', 'pokemon image');
+  imgContainer.appendChild(pokemonImage);
+  pokemonData.appendChild(imgContainer);
+
+  const intro = document.createElement('div');
+  intro.classList.add('intro');
+  pokemonData.appendChild(intro);
+  const info = document.createElement('p');
+  info.classList.add('info');
+  info.textContent = `Type: 
+  Height: ${object.height}
+  weight: ${object.weight}
+  `;
+  intro.appendChild(info);
 
   // I will display the type of the pokemon
 
@@ -62,7 +78,7 @@ const createPopup = (object) => {
     types.appendChild(li);
   });
 
-  pokemonInfo.appendChild(types);
+  pokemonData.appendChild(types);
 
   // I will add the window to display previous reservations
 

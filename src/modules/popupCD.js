@@ -5,26 +5,26 @@ import commentCounter1 from './commentCounter.js';
 
 const createPopup = (object) => {
   const popupContainer = document.createElement('div');
-  popupContainer.setAttribute('class', 'popupCard');
-  const body = document.getElementById('main-container');
+  popupContainer.setAttribute('class', 'popup-card');
+  const body = document.querySelector('body');
   body.appendChild(popupContainer);
+
+  const name = document.createElement('h1');
+  name.setAttribute('class', 'pokemon-name');
+  name.textContent = object.name.toUpperCase();
+  popupContainer.appendChild(name);
+
+  const popupInfo = document.createElement('div');
+  popupInfo.setAttribute('class', 'popup-info');
+  popupContainer.appendChild(popupInfo);
 
   const leftSide = document.createElement('div');
   leftSide.classList.add('left-side');
-  popupContainer.appendChild(leftSide);
+  popupInfo.appendChild(leftSide);
 
-  const popupPoke = document.createElement('div');
-  popupPoke.classList.add('popupPoke');
-  leftSide.appendChild(popupPoke);
-
-  const name = document.createElement('h3');
-  name.setAttribute('class', 'name');
-  name.textContent = object.name;
-  popupPoke.appendChild(name);
-
-  const id = document.createElement('p');
-  id.classList.add('id');
-  popupPoke.appendChild(id);
+  const pokemonData = document.createElement('div');
+  pokemonData.classList.add('pokemon-data');
+  leftSide.appendChild(pokemonData);
 
   const imgContainer = document.createElement('div');
   imgContainer.classList.add('picDiv');
@@ -32,11 +32,11 @@ const createPopup = (object) => {
   pokemonImage.setAttribute('src', object.sprites.front_default);
   pokemonImage.setAttribute('alt', 'pokemon image');
   imgContainer.appendChild(pokemonImage);
-  popupPoke.appendChild(imgContainer);
+  pokemonData.appendChild(imgContainer);
 
   const intro = document.createElement('div');
   intro.classList.add('intro');
-  popupPoke.appendChild(intro);
+  pokemonData.appendChild(intro);
   const info = document.createElement('p');
   info.classList.add('info');
   info.textContent = `Type: 
@@ -45,9 +45,23 @@ const createPopup = (object) => {
   `;
   intro.appendChild(info);
 
+  const pokemonTypes = object.types;
+  const types = document.createElement('ul');
+  types.classList.add('pokemon-types');
+
+  pokemonTypes.forEach((type) => {
+    const li = document.createElement('li');
+    li.textContent = type.type.name;
+    li.classList.add('type');
+    li.classList.add(type.type.name);
+    types.appendChild(li);
+  });
+
+  pokemonData.appendChild(types);
+
   const commentSection = document.createElement('div');
   commentSection.classList.add('comment-section');
-  popupContainer.appendChild(commentSection);
+  popupInfo.appendChild(commentSection);
 
   const commentHeader = document.createElement('div');
   commentHeader.setAttribute('id', 'comment-header');
@@ -59,8 +73,8 @@ const createPopup = (object) => {
 
   const closeBtn = document.createElement('button');
   closeBtn.textContent = 'X';
-  closeBtn.setAttribute('id', 'close-btn');
-  commentHeader.appendChild(closeBtn);
+  closeBtn.setAttribute('class', 'close-btn');
+  popupContainer.appendChild(closeBtn);
 
   const commentArea = document.createElement('div');
   commentArea.setAttribute('id', 'comment-area');
@@ -95,7 +109,7 @@ const createPopup = (object) => {
   bottom.appendChild(submitBtn);
 
   closeBtn.addEventListener('click', (e) => {
-    e.target.parentElement.parentElement.parentElement.remove();
+    e.target.parentElement.remove();
   });
 
   const displayComments = async () => {
