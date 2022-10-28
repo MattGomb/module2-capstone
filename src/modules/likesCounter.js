@@ -10,9 +10,7 @@ export default function liked(item) {
       headers: { 'Content-type': 'application/json; charset=UTF-8' },
     })
 
-      .then((response) => response.json())
-      .then((json) => console.log(json))
-      .catch((err) => console.log(err));
+      .then((response) => response.json());
 
     fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/q43Np4AB1ka0fqpIWSXs/likes/')
       .then((response) => response.json())
@@ -26,7 +24,6 @@ export default function liked(item) {
             pokeNumber.textContent = pokeLikes[i].likes;
           }
         }
-      })
-      .catch((err) => console.log(err));
+      });
   });
 }

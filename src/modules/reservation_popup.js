@@ -45,6 +45,20 @@ const createPopup = (object) => {
   pokemonData.classList.add('pokemon-data');
   leftSide.appendChild(pokemonData);
 
+  const header = document.createElement('div');
+  header.classList.add('header');
+  pokemonData.appendChild(header);
+
+  const pokeName = document.createElement('h3');
+  pokeName.classList.add('name');
+  pokeName.innerText = object.name;
+  header.appendChild(pokeName);
+
+  const pokeID = document.createElement('p');
+  pokeID.classList.add('id');
+  pokeID.innerText = `${object.id}`;
+  header.appendChild(pokeID);
+
   const imgContainer = document.createElement('div');
   imgContainer.classList.add('picDiv');
   const pokemonImage = document.createElement('img');
@@ -58,7 +72,7 @@ const createPopup = (object) => {
   pokemonData.appendChild(intro);
   const info = document.createElement('p');
   info.classList.add('info');
-  info.textContent = `Type: 
+  info.textContent = `
   Height: ${object.height}
   weight: ${object.weight}
   `;
@@ -78,7 +92,7 @@ const createPopup = (object) => {
     types.appendChild(li);
   });
 
-  pokemonData.appendChild(types);
+  intro.appendChild(types);
 
   // I will add the window to display previous reservations
 
@@ -101,7 +115,8 @@ const createPopup = (object) => {
 
   // This part is to add the close button
 
-  const closeButton = document.createElement('div');
+  const closeButton = document.createElement('button');
+  closeButton.setAttribute('type', 'button');
   closeButton.className = 'close-btn';
   closeButton.innerHTML = 'X';
   popupContainer.appendChild(closeButton);
