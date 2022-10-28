@@ -1,6 +1,5 @@
 export default function liked(item) {
   document.getElementById(item).addEventListener('click', () => {
-    console.log('works');
     const data = {
       item_id: item,
     };
