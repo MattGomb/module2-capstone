@@ -338,6 +338,38 @@ td {
   margin-top: 12px;
 }
 
+.comment-name, .comment-msg, .input-date {
+  padding: 0.25rem;
+}
+
+.comment-name {
+  font-weight: bold;
+}
+
+.comment-msg {
+  margin-bottom: 0.25rem;
+}
+
+.input-date {
+  background-color: rgb(200, 200, 200);
+  border-radius: 0.5rem;
+  width: fit-content;
+  padding: 0.25rem;
+  color: white;
+  font-weight: bold;
+}
+
+.bottom-div {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#counter {
+  font-size: 0.75rem;
+}
+
 @media screen and (min-width: 321px) {
   .PokeCard {
     width: 60%;
@@ -349,6 +381,13 @@ td {
 
   #title {
     font-size: 3rem;
+  }
+
+  .popup-card {
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    align-items: center;
   }
 }
 
@@ -362,6 +401,10 @@ td {
     flex-direction: column;
   }
 
+  #comment-area {
+    height: 70%;
+  }
+
   .popupCard {
     top: 10%;
     left: 15%;
@@ -370,7 +413,6 @@ td {
     width: 70%;
   }
 
-  .left-side,
   .reservation-info {
     height: 80%;
     margin-top: 24px;
@@ -421,8 +463,7 @@ td {
   }
 
   .pokemon-data {
-    height: 60%;
-    width: 50%;
+    width: 60%;
   }
 }
 
