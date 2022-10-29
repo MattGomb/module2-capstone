@@ -12,6 +12,10 @@
 - webpack, jest, babel
 - Git, GitHub, Gitflow, VSCode
 
+## Video Introduction
+
+[video](https://drive.google.com/file/d/1lBOUQEx8705HpSR24fNicWKsbDIbqoDa/view?usp=sharing)
+
 ## Live Demo (if available)
 
 [Live Demo Link](https://livedemo.com)
