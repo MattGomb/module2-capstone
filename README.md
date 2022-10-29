@@ -16,9 +16,9 @@
 
 [video](https://drive.google.com/file/d/1lBOUQEx8705HpSR24fNicWKsbDIbqoDa/view?usp=sharing)
 
-## Live Demo (if available)
+## Live Demo 
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://mattgomb.github.io/module2-capstone/dist/)
 
 
 ## Getting Started
